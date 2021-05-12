@@ -34,9 +34,9 @@ body {
 .wrapper {
   background-image: linear-gradient($bgviolet, $bgblue);
   min-height: 100vh;
-  padding: 3rem;
   @include flex(row, center, center);
   .content {
+    margin: 5rem 2rem;
     background-color: #fff;
     max-width: 56em;
     border-radius: 20px;
@@ -61,11 +61,13 @@ body {
       display: none;
     }
     .faq {
-      padding: 0 2rem;
+      width: 90%;
+      margin: 0 auto;
       h1 {
         text-align: center;
         margin-top: -3rem;
         margin-bottom: 2rem;
+        color: $darkblue;
       }
       .accordion {
         &:last-child {
@@ -74,23 +76,81 @@ body {
       }
       .accordion__item {
         border-bottom: 1px solid $divider;
+        margin-bottom: 2rem;
       }
       .accordion__question {
         border: none;
+        display: block;
+        width: 100%;
+        text-align: left;
         background-color: #fff;
+        color: $darkblue;
+        transition: 0.3s;
+        font-size: 0.8rem;
+        font-family: inherit;
+        border: 1px solid transparent;
+        position: relative;
+        margin-bottom: 1rem;
+        @include flex(row, space-between, center);
+        &::after {
+          content: "";
+          background-image: url("../images/icon-arrow-down.svg");
+          background-size: 75%;
+          background-repeat: no-repeat;
+          position: absolute;
+          width: 1rem;
+          height: 0.7rem;
+          right: 0;
+          transition: 0.5s;
+        }
+        &.active-btn {
+          color: $darkblue;
+          &::after {
+            transform: rotateZ(-180deg) translateY(25%);
+          }
+        }
+        &:hover {
+          color: $softred;
+          cursor: pointer;
+        }
+        &:focus {
+          color: $softred;
+          outline: transparent;
+        }
+      }
+      .accordion__content {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: $text-dgb;
+        max-height: 0;
+        visibility: hidden;
+        transition: 0.5s;
+        &.active__content {
+          max-height: 100%;
+          visibility: visible;
+        }
+      }
+      .active-btn {
+        font-weight: 700;
       }
     }
   }
   @media screen and (min-width: 62em) {
     .content {
       @include flex(row, center, center);
-      padding: 3rem 3rem 3rem 0;
+      padding: 3rem 3rem 0 0;
       .image,
       .faq {
         flex: 1;
       }
       .faq {
         @include flex(column, flex-start, flex-start);
+        h1 {
+          margin-top: 0;
+        }
+        .accordion__question {
+          font-size: 1rem;
+        }
       }
       .box {
         display: block;
