@@ -123,10 +123,12 @@ body {
         color: $text-dgb;
         max-height: 0;
         visibility: hidden;
-        transition: 0s;
+        transition: 0.3s;
+        opacity: 0;
         &.active__content {
           max-height: 100%;
           visibility: visible;
+          opacity: 1;
         }
       }
       .active-btn {
