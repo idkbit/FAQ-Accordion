@@ -88,7 +88,7 @@ body {
         transition: 0.3s;
         font-size: 0.8rem;
         font-family: inherit;
-        border: 1px solid transparent;
+        border: 1px dotted transparent;
         position: relative;
         margin-bottom: 1rem;
         @include flex(row, space-between, center);
@@ -116,6 +116,10 @@ body {
         &:focus {
           outline: transparent;
         }
+        &:focus-visible {
+          outline: transparent;
+          border-color: $softred;
+        }
       }
       .accordion__content {
         font-size: 0.8rem;
@@ -123,10 +127,10 @@ body {
         color: $text-dgb;
         max-height: 0;
         visibility: hidden;
-        transition: 0.3s;
+        transition: max-height 0.4s ease;
         opacity: 0;
         &.active__content {
-          max-height: 100%;
+          max-height: 300px;
           visibility: visible;
           opacity: 1;
         }
