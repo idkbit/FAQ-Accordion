@@ -106,15 +106,14 @@ body {
         &.active-btn {
           color: $darkblue;
           &::after {
-            transform: rotateZ(-180deg) translateY(25%);
+            transform: rotateZ(180deg) translateY(25%);
           }
         }
-        &:hover {
+        &:hover:not(.active-btn) {
           color: $softred;
           cursor: pointer;
         }
         &:focus {
-          color: $softred;
           outline: transparent;
         }
       }
@@ -124,7 +123,7 @@ body {
         color: $text-dgb;
         max-height: 0;
         visibility: hidden;
-        transition: 0.5s;
+        transition: 0s;
         &.active__content {
           max-height: 100%;
           visibility: visible;
@@ -132,6 +131,7 @@ body {
       }
       .active-btn {
         font-weight: 700;
+        cursor: pointer;
       }
     }
   }
