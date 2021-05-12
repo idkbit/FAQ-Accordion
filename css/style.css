@@ -1,1 +1,151 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.wrapper {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background-image: linear-gradient(#af67e9, #6565e7);
+  min-height: 100vh;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .content {
+  background-color: #fff;
+  max-width: 56em;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 5rem;
+}
+
+.wrapper .content .image {
+  background-image: url("../images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 15rem;
+  background-position: center top;
+}
+
+.wrapper .content .image img {
+  height: auto;
+  width: 100%;
+  max-width: 15rem;
+  min-width: 5rem;
+  margin: auto;
+  display: block;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+
+.wrapper .content .box {
+  display: none;
+}
+
+.wrapper .content .faq {
+  padding: 0 2rem;
+}
+
+.wrapper .content .faq h1 {
+  text-align: center;
+  margin-top: -3rem;
+  margin-bottom: 2rem;
+}
+
+.wrapper .content .faq .accordion:last-child {
+  margin-bottom: 3rem;
+}
+
+.wrapper .content .faq .accordion__item {
+  border-bottom: 1px solid #e7e7e9;
+}
+
+.wrapper .content .faq .accordion__question {
+  border: none;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 62em) {
+  .wrapper .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 3rem 3rem 3rem 0;
+  }
+  .wrapper .content .image,
+  .wrapper .content .faq {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .wrapper .content .faq {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .wrapper .content .box {
+    display: block;
+    position: absolute;
+    left: 0;
+    -webkit-transform: translate(-50%, 3rem);
+            transform: translate(-50%, 3rem);
+  }
+  .wrapper .content .image {
+    overflow-x: hidden;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-size: 25rem;
+    background-position: -4.2rem 2rem;
+    padding: 4rem 0;
+  }
+  .wrapper .content .image img {
+    position: relative;
+    right: 5rem;
+    max-width: 25rem;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */

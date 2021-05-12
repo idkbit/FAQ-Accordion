@@ -1,0 +1,116 @@
+$darkblue: hsl(238, 29%, 16%);
+$softred: hsl(14, 88%, 65%);
+$bgviolet: hsl(273, 75%, 66%);
+$bgblue: hsl(240, 73%, 65%);
+
+$text-vdgb: hsl(237, 12%, 33%);
+$text-dgb: hsl(240, 6%, 50%);
+
+$divider: hsl(240, 5%, 91%);
+
+@mixin flex($flex-direction, $justify, $align) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.wrapper {
+  background-image: linear-gradient($bgviolet, $bgblue);
+  min-height: 100vh;
+  padding: 3rem;
+  @include flex(row, center, center);
+  .content {
+    background-color: #fff;
+    max-width: 56em;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 5rem;
+    .image {
+      background-image: url("../images/bg-pattern-mobile.svg");
+      background-repeat: no-repeat;
+      background-size: 15rem;
+      background-position: center top;
+      img {
+        height: auto;
+        width: 100%;
+        max-width: 15rem;
+        min-width: 5rem;
+        margin: auto;
+        display: block;
+        transform: translateY(-60%);
+      }
+    }
+    .box {
+      display: none;
+    }
+    .faq {
+      padding: 0 2rem;
+      h1 {
+        text-align: center;
+        margin-top: -3rem;
+        margin-bottom: 2rem;
+      }
+      .accordion {
+        &:last-child {
+          margin-bottom: 3rem;
+        }
+      }
+      .accordion__item {
+        border-bottom: 1px solid $divider;
+      }
+      .accordion__question {
+        border: none;
+        background-color: #fff;
+      }
+    }
+  }
+  @media screen and (min-width: 62em) {
+    .content {
+      @include flex(row, center, center);
+      padding: 3rem 3rem 3rem 0;
+      .image,
+      .faq {
+        flex: 1;
+      }
+      .faq {
+        @include flex(column, flex-start, flex-start);
+      }
+      .box {
+        display: block;
+        position: absolute;
+        left: 0;
+        transform: translate(-50%, 3rem);
+      }
+      .image {
+        overflow-x: hidden;
+        background-image: url("../images/bg-pattern-desktop.svg");
+        background-size: 25rem;
+        background-position: -4.2rem 2rem;
+        padding: 4rem 0;
+        img {
+          position: relative;
+          right: 5rem;
+          max-width: 25rem;
+          transform: translate(0);
+        }
+      }
+    }
+  }
+}
