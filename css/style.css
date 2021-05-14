@@ -157,8 +157,8 @@ body {
   color: #787887;
   max-height: 0;
   visibility: hidden;
-  -webkit-transition: max-height 0.4s ease;
-  transition: max-height 0.4s ease;
+  -webkit-transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease;
   opacity: 0;
 }
 
