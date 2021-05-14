@@ -124,8 +124,8 @@ body {
   width: 1rem;
   height: 0.7rem;
   right: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .wrapper .content .faq .accordion__question.active-btn {
@@ -157,15 +157,14 @@ body {
   color: #787887;
   max-height: 0;
   visibility: hidden;
-  -webkit-transition: max-height 0.5s ease;
-  transition: max-height 0.5s ease;
-  opacity: 0;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 .wrapper .content .faq .accordion__content.active__content {
   max-height: 300px;
   visibility: visible;
-  opacity: 1;
 }
 
 .wrapper .content .faq .active-btn {

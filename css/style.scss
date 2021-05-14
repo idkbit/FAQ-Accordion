@@ -101,7 +101,7 @@ body {
           width: 1rem;
           height: 0.7rem;
           right: 0;
-          transition: 0.5s;
+          transition: 0.5s ease;
         }
         &.active-btn {
           color: $darkblue;
@@ -127,12 +127,11 @@ body {
         color: $text-dgb;
         max-height: 0;
         visibility: hidden;
-        transition: max-height 0.5s ease;
-        opacity: 0;
+        transition: max-height 0.5s ease-in-out;
+        overflow: hidden;
         &.active__content {
           max-height: 300px;
           visibility: visible;
-          opacity: 1;
         }
       }
       .active-btn {
